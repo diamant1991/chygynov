@@ -1936,8 +1936,8 @@ footer .copyright a:hover {
 }
 .close {
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   cursor: pointer;
   background: url(../images/close.png);
 }
@@ -1951,6 +1951,9 @@ footer .copyright a:hover {
   z-index: 4;
   top: 25%;
   display: none;
+  -webkit-box-shadow: 0px 0px 16px 1px black;
+  -moz-box-shadow: 0px 0px 16px 1px black;
+  box-shadow: 0px 0px 16px 1px black;
 }
 .modal header {
   position: relative;
