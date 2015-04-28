@@ -2162,3 +2162,69 @@ footer .copyright a:hover {
   padding-top: 0;
   cursor: pointer;
 }
+.news {
+  width: 100%;
+  min-width: 960px;
+  background-color: #f8fafa;
+  padding-top: 25px;
+  padding-bottom: 90px;
+  border-bottom: 1px solid #e6e8e8;
+}
+.news h1 {
+  text-transform: uppercase;
+  margin-top: 35px;
+  font-family: "PFDasGroteskProMedium";
+  font-size: 38px;
+  line-height: 1.2;
+}
+.news h2 {
+  font-size: 27px;
+  text-transform: uppercase;
+  color: #662028;
+  font-family: "PFDasGroteskProRegular";
+  line-height: 1.2;
+  margin-top: 28px;
+}
+.news p {
+  font-size: 18px;
+  color: #22313f;
+  font-family: "PFDasGroteskProRegular";
+  line-height: 1.7;
+  margin-top: 30px;
+}
+.breadcrumbs {
+  font-family: "PFDasGroteskProRegular";
+  font-size: 18px;
+}
+.breadcrumbs li {
+  float: left;
+  color: #595959;
+}
+.breadcrumbs li a {
+  color: #1c1b1b;
+}
+.breadcrumbs li a:hover > span {
+  text-decoration: underline;
+}
+.news + footer {
+  background-color: white !important;
+}
+#complete {
+  display: none;
+  width: 820px;
+  left: 50%;
+  margin-left: -410px;
+  top: 20%;
+  padding: 50px 0;
+  text-transform: uppercase;
+}
+#complete .close {
+  right: -42px;
+  top: -58px;
+}
+#complete p {
+  color: #247301;
+  font-family: Verdana, sans-serif;
+  font-size: 23px;
+  font-weight: bold;
+}
