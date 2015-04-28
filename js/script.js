@@ -4,6 +4,10 @@ jQuery(function($){
 
 $( document ).ready(function() {
 
+    $(".full-prof").click(function () {
+        $(".full-form").slideToggle("slow");
+    });
+
 	$('input,textarea').focus(function(){
 	  $(this).data('placeholder',$(this).attr('placeholder'))
 	  $(this).attr('placeholder','');
@@ -38,11 +42,6 @@ $( document ).ready(function() {
     });
 
 
-
-
-
-
-
     $('.close').click(function(){
     	$('.modal').fadeOut(400);
     	$('.form-mask').fadeOut(400);
@@ -51,4 +50,18 @@ $( document ).ready(function() {
     	$('.modal').fadeOut(400);
     	$(this).fadeOut(400);
     })
+
+
+     $('a[href*=#]').bind("click", function(e){
+      var anchor = $(this);
+      $('html, body').stop().animate({
+         scrollTop: $(anchor.attr('href')).offset().top
+      }, 1200);
+      e.preventDefault();
+   });
+
+
+   return false;
+
+
 });
