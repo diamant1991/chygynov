@@ -475,6 +475,11 @@
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script src="js/script.js"></script>
-<script src="js/jquery.maskedinput.js"></script>
+<script src="js/jquery.inputmask.js"></script>
+<script>
+        $(document).ready(function(){
+        $(".tel-mask").inputmask("+7 (999) 999-9999");
+    });
+</script>
 </body>
 </html>
