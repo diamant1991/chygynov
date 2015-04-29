@@ -12,6 +12,7 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/jquery-ui.css">
 	<link rel="stylesheet" href="css/main.less">
 	<script src="js/less.min.js"></script>
 	<script src="js/modernizr-2.8.3.min.js"></script>
@@ -309,7 +310,7 @@
 					<fieldset class="full-form">
 						<div class="input-block">
 							<p>Дата Рождения</p>
-							<input type="text" placeholder="12 марта 2014 " class="date-input">
+							<input type="text" placeholder="12 марта 2014 " class="date-input datepicker">
 							<span class="lp_sprite sprite-calendar"></span>
 						</div>
 						<div class="input-block">
@@ -327,7 +328,7 @@
 						</div>
 						<div class="input-block">
 							<p>Выдан</p>
-							<input type="text" placeholder="12 марта 2014" class="date-input">
+							<input type="text" placeholder="12 марта 2014" class="date-input datepicker">
 							<span class="lp_sprite sprite-calendar"></span>
 						</div>
 						<div class="input-block">
@@ -365,7 +366,7 @@
 							</div>
 							<div class="input-block">
 								<p>Дата:</p>
-								<input type="text" placeholder="12 марта 2014" class="date-input">
+								<input type="text" placeholder="12 марта 2014" class="date-input datepicker">
 								<span class="lp_sprite sprite-calendar"></span>
 							</div>
 							<div class="input-block">
@@ -544,6 +545,23 @@
 </div>
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$(".datepicker").datepicker({
+		 monthNames: ['Январь', 'Февраль', 'Март', 'Апрель',
+		'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь',
+		'Октябрь', 'Ноябрь', 'Декабрь'],
+		 dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+		 firstDay: 1,
+		});
+});
+</script>
+<script>
+  $(function(){
+		$(".datepicker").datepicker();
+});
+  </script>
 <script src="js/script.js"></script>
 <script src="js/jquery.maskedinput.js"></script>
 </body>

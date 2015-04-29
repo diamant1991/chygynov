@@ -1347,7 +1347,6 @@ footer .copyright a:hover {
   position: absolute;
   left: 8px;
   top: 26px;
-  display: none;
 }
 .profile .right-profile fieldset .input-block .ser-block {
   float: left;
@@ -1366,11 +1365,8 @@ footer .copyright a:hover {
   width: 185px;
   position: relative;
 }
-.profile .right-profile fieldset .date-input:focus {
+.profile .right-profile fieldset .date-input {
   padding-left: 45px !important;
-}
-.profile .right-profile fieldset .date-input:focus + .sprite-calendar {
-  display: block;
 }
 .profile .right-profile fieldset .full-prof {
   text-transform: uppercase;
