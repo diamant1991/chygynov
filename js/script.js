@@ -4,6 +4,7 @@ jQuery(function($){
 
 $( document ).ready(function() {
 
+
     $(".full-prof").click(function () {
         $(".full-form").slideToggle("slow");
     });
@@ -51,6 +52,17 @@ $( document ).ready(function() {
     	$(this).fadeOut(400);
     })
 
+      $(document).keyup(function(d) {
+            if (d.keyCode == 27) {
+                $('.form-mask').fadeOut(400);
+                $('.modal').fadeOut(400);
+            }
+        });
+
+
+
+
+
     $('.attach').click(function(){
       $('.choice-btn').slideToggle("medium");
     });
@@ -81,3 +93,6 @@ $( document ).ready(function() {
 
 
 });
+
+
+           
