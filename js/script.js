@@ -51,11 +51,27 @@ $( document ).ready(function() {
     	$(this).fadeOut(400);
     })
 
+    $('.attach').click(function(){
+      $('.choice-btn').slideToggle("medium");
+    });
+    $('.fill-link').click(function(){
+      $('.fill-data').slideToggle("medium");
+    })
+
+
+    $(function(){
+    $(window).scroll(function() {
+        var top = $(document).scrollTop();
+        if (top < 140) $("nav").css({ position: 'relative'});
+        else $("nav").css({position: 'fixed'});
+    });
+});
+
 
      $('a[href*=#]').bind("click", function(e){
       var anchor = $(this);
       $('html, body').stop().animate({
-         scrollTop: $(anchor.attr('href')).offset().top
+         scrollTop: $(anchor.attr('href')).offset().top-55
       }, 1200);
       e.preventDefault();
    });

@@ -357,22 +357,17 @@ strong{
 	-webkit-border-radius: 25px;
 	-moz-border-radius: 25px;
 	border-radius: 25px;
-	-webkit-transition: 0.45s all ease-in-out;
-	-moz-transition: 0.45s all ease-in-out;
-	transition: 0.45s all ease-in-out;
-	background: #f6ac34;
-	background: -moz-linear-gradient(top,  #f6ac34 0%, #f9b921 37%, #fcc414 73%, #ffd003 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6ac34), color-stop(37%,#f9b921), color-stop(73%,#fcc414), color-stop(100%,#ffd003));
-	background: -webkit-linear-gradient(top,  #f6ac34 0%,#f9b921 37%,#fcc414 73%,#ffd003 100%); 
-	background: -o-linear-gradient(top,  #f6ac34 0%,#f9b921 37%,#fcc414 73%,#ffd003 100%); 
-	background: -ms-linear-gradient(top,  #f6ac34 0%,#f9b921 37%,#fcc414 73%,#ffd003 100%); 
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6ac34', endColorstr='#ffd003',GradientType=0 );
+	background: #ffd200;
+	
 	
 		&:hover{
-			 transform: scale(1.2);
-    		-webkit-transform: scale(1.2);
-    		-o-transform: scale(1.2);
-    		-moz-transform: scale(1.2);
+			 background: #f6ac34;
+			background: -moz-linear-gradient(top,  #f6ac34 0%, #f9b921 37%, #fcc414 73%, #ffd003 100%);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6ac34), color-stop(37%,#f9b921), color-stop(73%,#fcc414), color-stop(100%,#ffd003));
+			background: -webkit-linear-gradient(top,  #f6ac34 0%,#f9b921 37%,#fcc414 73%,#ffd003 100%); 
+			background: -o-linear-gradient(top,  #f6ac34 0%,#f9b921 37%,#fcc414 73%,#ffd003 100%); 
+			background: -ms-linear-gradient(top,  #f6ac34 0%,#f9b921 37%,#fcc414 73%,#ffd003 100%); 
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6ac34', endColorstr='#ffd003',GradientType=0 );
 		}
 }
 .container{
@@ -461,6 +456,11 @@ nav{
 	.centering;
 	background-color: #662028;
 	height: 55px;
+	left: 0;
+	top: 0;
+	position: relative;
+	z-index: 10;
+
 		span:first-child{
 			float: left;
 			margin-right: 10px;
@@ -614,10 +614,15 @@ nav{
 			width: 165px;
 			left: 50%;
 			margin-left: -82.5px;
-			bottom: -60px;
 			margin-top: 15px;
 			position: absolute;
-			
+			bottom: 20px;
+			z-index: 3;
+			visibility: hidden;
+			opacity: 0;
+			-webkit-transition: 0.25s opacity ease-in;
+			-moz-transition: 0.25s opacity ease-in;
+			transition: 0.25s opacity ease-in;
 		}
 		.services-block{
 			width: 475px;
@@ -630,9 +635,16 @@ nav{
 			color: #fafafa;
 			position: relative;
 			overflow: hidden;
+			-webkit-transition: 0.1s background ease-in-out;
+			-moz-transition: 0.1s background ease-in-out;
+			transition: 0.1s background ease-in-out;
 
+				&:hover{
+					background: url(../images/hover.jpg)
+				}
 				&:hover .link{
-					bottom: 20px;
+					visibility: visible;
+					opacity: 1;
 				}
 
 				h5{
@@ -656,6 +668,16 @@ nav{
 					margin: auto;
 					margin-bottom: 25px;
 				}
+		}
+		.mask{
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.5);
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 2;
+			display: none;
 		}
 		.center-block{
 			float: none;
@@ -1419,9 +1441,7 @@ footer{
 							padding-top: 10px;
 							padding-left: 20px;
 						}
-						.date-input{
-							padding-left: 45px !important;
-						}
+						
 						.input-block{
 							margin-bottom: 15px;
 							position: relative;
@@ -1430,6 +1450,7 @@ footer{
 									position: absolute;
 									left: 8px;
   									top: 26px;
+  									display: none;
 								}
 								.ser-block{
 									float: left;
@@ -1449,6 +1470,12 @@ footer{
 									position: relative;
 								}
 
+						}
+						.date-input:focus{
+							padding-left: 45px !important;
+						}
+						.date-input:focus+.sprite-calendar{
+							display: block;
 						}
 						.full-prof{
 							text-transform: uppercase;
@@ -1499,20 +1526,7 @@ footer{
 											float: right;
 										}
 								}
-								button{
-									width: 152px;
-									height: 42px;
-									display: block;
-									margin: 25px auto;
-									border:0;
-									outline: 0;
-									background: url(../images/btn.png);
-									font-family: Verdana,sans-serif;
-									color: #000;
-									cursor: pointer;
-									padding-bottom: 6px;
-
-								}
+								
 						}
 				}
 				.full-form{
@@ -2095,7 +2109,7 @@ footer{
 	position: fixed;
 	width: 100%;
 	height: 100%;
-	z-index: 3;
+	z-index: 11;
 	left: 0;
 	top: 0;
 	bottom: 0;
@@ -2116,7 +2130,7 @@ footer{
 	-moz-border-radius: 10px;
 	border-radius: 10px;
 	padding: 30px;
-	z-index: 4;
+	z-index: 12;
 	top: 25%;
 	display: none;
 	-webkit-box-shadow: 0px 0px 16px 1px #000000;
@@ -2404,4 +2418,45 @@ footer{
 			font-size: 23px;
 			font-weight: bold;
 		}
+}
+.fill-data{
+	display: none;
+}
+	.fill-data .input-block:first-child{
+		margin-top: 25px;
+	}
+.choice-btn{
+	display: none;
+
+		button{
+			width: 152px;
+			height: 42px;
+			display: block;
+			margin: auto;
+			margin-top: 25px;
+			border:0;
+			outline: 0;
+			background: url(../images/btn.png);
+			font-family: Verdana,sans-serif;
+			color: #000;
+			cursor: pointer;
+			padding-bottom: 6px;
+		}
+}
+.fill-data+.input-block{
+	margin-top: 25px;
+}
+.attach,.fill-link{
+	cursor: pointer;
+}
+
+@media(max-width:1199px){
+	.text .girl{
+		width: 245px;
+		height: 330px;
+		background: url(../images/girl.png);
+		background-position: 50% 50%;
+		background-size: cover;
+		right: 0;
+	}
 }
