@@ -70,6 +70,11 @@ $( document ).ready(function() {
       $('.fill-data').slideToggle("medium");
     })
 
+    $('.open-form input').click(function(){
+        if($('.full-form').css('display')=='none'){
+            $(".full-form").slideDown("medium");
+        }
+    })
 
     $(function(){
     $(window).scroll(function() {
