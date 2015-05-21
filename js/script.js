@@ -39,6 +39,10 @@ $( document ).ready(function() {
     	$('.form-mask').fadeIn(400);
     	$('#record').fadeIn(400);
     });
+     $('.md-6').click(function(){
+      $('.form-mask').fadeIn(400);
+      $('#m6').fadeIn(400);
+    });
 
 
     $('.close').click(function(){
